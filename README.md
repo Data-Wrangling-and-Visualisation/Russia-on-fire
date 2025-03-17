@@ -51,7 +51,7 @@ python src/load_data.py
 After that everything will be inserted into database
 
 
-## Finished
+## Work done for the checkpoint 
 
 Remal: Finding a dataset, creating a database, parsing  
 Artyom: Cleaning data, creating charts, EDA (Exploratory Data Analysis)  
