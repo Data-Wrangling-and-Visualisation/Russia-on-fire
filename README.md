@@ -6,53 +6,34 @@ This project loads forest fire data from a CSV file into a PostgreSQL database u
 
 ## Prerequisites
 
-1. **Python 3.11+**: Ensure Python is installed.
-2. **PostgreSQL**: Install and set up PostgreSQL on your machine.
+1. Docker engine 
+2. Docker compose 
 
-## Setup
+## How to run backend 
 
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/Data-Wrangling-and-Visualisation/Russia-on-fire
-cd Russia-on-fire
+First you need to create .env file and put this data:
 ```
+#.env
+#Database
+POSTGRES_DB=fires_db
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=<passw>
+DB_HOST=db
+DB_PORT=5432
 
-
-### 2. Install dependencies
-
-Installing python packets from pip
-
-```bash
-pip install -r requirements.txt
-```
-
-### 3. Preparing data to upload to Database
-
-First of all, you need to create database in posgresql DBMS(Database Management System). And the Insert prepared table scheme which is located in `src/table_scheme.sql`
-
-And then create file with environment vars like postgresql user password and so on
-```
-DB_NAME=<database_name>
-DB_USER=<db_user>
-DB_PASSWORD=<user_passw>
-DB_HOST=<host_ip>
-DB_PORT=<db_port>
-```
-
-### 4. Uploading data into Database
-
-Now you need to run python script and wait around 3-5 min till all data will be loaded to database.
-
-```bash
-python src/load_data.py
-```
-
-After that everything will be inserted into database
-
-
+# Application
+API_HOST=0.0.0.0
+API_PORT=8000
 ## Finished
+```
 
-Remal: Finding a dataset, creating a database, parsing 
-Artyom: Cleaning data, creating charts, EDA (Exploratory Data Analysis)
-Vladislav: Studying the data, EDA, creating a prototype
+and then run docker compose file. 
+```
+docker-compose up -d
+```
+After that you should see container outputs.  It takes usually 1-5 min to initial start it. and then you will see adress where api is located.
+or you can enter using this ```localhost:8000/docs```
+
+Remal: Finding a dataset, creating a database, parsing, creating backend api, deploying and working with docker compose  
+Artyom: Cleaning data, creating charts, EDA (Exploratory Data Analysis)  
+Vladislav: Studying the data, EDA, creating a prototype  
