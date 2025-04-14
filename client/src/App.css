@@ -1,0 +1,128 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.App-header {
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.filters {
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+}
+
+.filters label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 0.9em;
+}
+
+.filters input,
+.filters select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+.filters button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.filters button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.filters button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+
+.visualizations {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.viz-section {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.viz-section h2 {
+  margin-top: 0;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.chart-container {
+    width: 100%;
+    /* Ensure container allows SVG to size correctly */
+    overflow-x: auto; /* Add scroll if chart is wider than container */
+    display: flex; /* Helps center SVG if needed */
+    justify-content: center; /* Center SVG horizontally */
+}
+
+/* Style for D3 chart elements if needed */
+.bar:hover {
+  fill: orange;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #ccc;
+  shape-rendering: crispEdges;
+}
+
+.axis text {
+  font-size: 10px;
+  fill: #555;
+}
+
+/* Loading/Error messages */
+.loading-message,
+.error-message {
+    text-align: center;
+    padding: 20px;
+    font-style: italic;
+}
+.error-message {
+    color: red;
+    font-weight: bold;
+}
+
+/* Tooltip styles already inline in components, but can be moved here */
+/* .tooltip { ... } */
