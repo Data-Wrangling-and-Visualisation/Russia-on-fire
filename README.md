@@ -6,53 +6,34 @@ This project loads forest fire data from a CSV file into a PostgreSQL database u
 
 ## Prerequisites
 
-1. **Python 3.11+**: Ensure Python is installed.
-2. **PostgreSQL**: Install and set up PostgreSQL on your machine.
+1. Docker engine 
+2. Docker compose 
 
-## Setup
+## How to run backend 
 
-### 1. Clone the Repository
+First you need to create .env file and put this data:
+```
+#.env
+#Database
+POSTGRES_DB=fires_db
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=<passw>
+DB_HOST=db
+DB_PORT=5432
 
-```bash
-git clone https://github.com/Data-Wrangling-and-Visualisation/Russia-on-fire
-cd Russia-on-fire
+# Application
+API_HOST=0.0.0.0
+API_PORT=8000
+## Finished
 ```
 
-
-### 2. Install dependencies
-
-Installing python packets from pip
-
-```bash
-pip install -r requirements.txt
+and then run docker compose file. 
 ```
-
-### 3. Preparing data to upload to Database
-
-First of all, you need to create database in posgresql DBMS(Database Management System). And the Insert prepared table scheme which is located in `src/table_scheme.sql`
-
-And then create file with environment vars like postgresql user password and so on
+docker-compose up -d
 ```
-DB_NAME=<database_name>
-DB_USER=<db_user>
-DB_PASSWORD=<user_passw>
-DB_HOST=<host_ip>
-DB_PORT=<db_port>
-```
+After that you should see container outputs.  It takes usually 1-5 min to initial start it. and then you will see adress where api is located.
+or you can enter using this ```localhost:8000/docs```
 
-### 4. Uploading data into Database
-
-Now you need to run python script and wait around 3-5 min till all data will be loaded to database.
-
-```bash
-python src/load_data.py
-```
-
-After that everything will be inserted into database
-
-
-## Work done for the checkpoint 
-
-Remal: Finding a dataset, creating a database, parsing  
+Remal: Finding a dataset, creating a database, parsing, creating backend api, deploying and working with docker compose  
 Artyom: Cleaning data, creating charts, EDA (Exploratory Data Analysis)  
 Vladislav: Studying the data, EDA, creating a prototype  
