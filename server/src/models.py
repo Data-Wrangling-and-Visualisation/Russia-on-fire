@@ -1,7 +1,7 @@
 from sqlalchemy import CheckConstraint, Column, Date, Index, Integer, Numeric, String
 
 from .database import Base
-
+#
 
 class FireDB(Base):
     __tablename__ = "fires"
