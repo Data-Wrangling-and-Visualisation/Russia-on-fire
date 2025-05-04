@@ -22,12 +22,12 @@ This project loads forest fire data from a CSV file into a PostgreSQL database u
 1. Docker engine 
 2. Docker compose
 ### Installation
-**Clone the repository:**
-    ```sh
+1. **Clone the repository:**
+     ```sh
     git clone https://github.com/Data-Wrangling-and-Visualisation/Russia-on-fire
     cd Russia-on-fire
     ```
-## Run the project via Docker
+2. **Run the project via Docker**
 
 First you need to create .env file in the Russia-on-fire folder and put this data:
 ```
