@@ -10,7 +10,11 @@ This project loads forest fire data from a CSV file into a PostgreSQL database u
   - EDA, Frontend
 - **Vlad Merkulov (DS-2)**
   - EDA, Frontend
- 
+## Github structure
+- Folder **client** contains code for front-end
+- Folder **server** contains code for back-end
+- Folder **plots** contains a ipynb file with our Exploratory data analysis(EDA)
+- Folder **data** contains a dataset itself in zip achive format and a pdf file with description of the dataset
 ## Setup and Run Instructions
 
 ### Prerequisites
@@ -18,30 +22,12 @@ This project loads forest fire data from a CSV file into a PostgreSQL database u
 1. Docker engine 
 2. Docker compose
 ### Installation
-1. **Clone the repository:**
+**Clone the repository:**
     ```sh
     git clone https://github.com/Data-Wrangling-and-Visualisation/Russia-on-fire
     cd Russia-on-fire
     ```
-2. **Create a virtual environment:**
-    ```sh
-    python -m venv venv
-    ```
-3. **Activate the virtual environment:**
-    - On Windows:
-        ```sh
-        .\venv\Scripts\activate
-        ```
-    - On macOS and Linux:
-        ```sh
-        source venv/bin/activate
-        ```
-4. **Install the required packages:**
-    ```sh
-    pip install -r requirements.txt
-    ```
-
-### Run the project via Docker
+## Run the project via Docker
 
 First you need to create .env file in the Russia-on-fire folder and put this data:
 ```
